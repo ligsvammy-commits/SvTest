@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Первый заказ на Pinduoduo – памятка для покупок из Китая без байера</title>
+<meta name="description" content="Пошаговая PDF-памятка: как покупать на Pinduoduo из России напрямую, без байера и наценки. Реальные скриншоты, чек-лист продавца, шаблоны сообщений на китайском, таблица расчёта цены.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5EFE3;
+  --paper-2:#ECE3D0;
+  --ink:#1C1712;
+  --ink-soft:rgba(28,23,18,.64);
+  --line:rgba(28,23,18,.16);
+  --red:#E02E24;
+  --red-deep:#B3231B;
+  --green:#227A4B;
+  --font-display:"Unbounded",sans-serif;
+  --font-body:"Onest",sans-serif;
+  --font-mono:"JetBrains Mono",monospace;
+  --font-cn:"Noto Sans SC","Onest",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--red);color:var(--paper)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.12;letter-spacing:-.01em}
+.mono{font-family:var(--font-mono)}
+a{color:inherit}
+
+/* ---------- header ---------- */
+.hdr{
+  position:sticky;top:0;z-index:50;
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.hdr-in{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;height:64px;
+}
+.brand{
+  font-family:var(--font-display);font-weight:900;font-size:15px;
+  text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap;
+}
+.brand-mark{
+  width:26px;height:26px;background:var(--red);color:var(--paper);
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:13px;border-radius:4px;
+}
+.nav{display:flex;gap:28px;font-size:15px}
+.nav a{text-decoration:none;color:var(--ink-soft);transition:color .2s}
+.nav a:hover{color:var(--ink)}
+.hdr .btn{font-size:14px;padding:10px 18px}
+@media(max-width:820px){.nav{display:none}}
+@media(max-width:640px){
+  .hdr .btn{display:none}
+  .brand{font-size:13.5px;gap:8px}
+  .brand-mark{width:24px;height:24px}
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-body);font-weight:600;font-size:16px;
+  padding:15px 28px;border-radius:6px;text-decoration:none;cursor:pointer;
+  border:2px solid var(--ink);
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease,color .15s ease;
+}
+.btn-red{background:var(--red);border-color:var(--red);color:#fff;box-shadow:4px 4px 0 var(--ink)}
+.btn-red:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn-red:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(56px,8vw,110px) 0 clamp(48px,7vw,90px)}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:clamp(36px,5vw,72px);align-items:center;
+}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr}}
+.hero-tag{
+  font-family:var(--font-mono);font-size:13px;color:var(--red-deep);
+  border:1.5px solid var(--red-deep);display:inline-block;
+  padding:5px 12px;border-radius:3px;margin-bottom:26px;
+  background:rgba(224,46,36,.06);
+}
+.hero h1{
+  font-size:clamp(2rem,4.6vw,3.5rem);font-weight:900;margin-bottom:24px;
+}
+.hero h1 .accent{color:var(--red)}
+.hero-sub{
+  font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--ink-soft);
+  max-width:34em;margin-bottom:34px;
+}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.hero-note{
+  margin-top:22px;font-family:var(--font-mono);font-size:13px;color:var(--ink-soft);
+}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.hero .rise{animation:rise .7s cubic-bezier(.2,.7,.3,1) both}
+.hero .rise-1{animation-delay:.08s}
+.hero .rise-2{animation-delay:.18s}
+.hero .rise-3{animation-delay:.3s}
+.hero .rise-4{animation-delay:.42s}
+@media(prefers-reduced-motion:reduce){
+  .hero .rise{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- manifest card ---------- */
+.manifest{
+  position:relative;
+  background:#FBF8F0;
+  border:1.5px solid var(--ink);
+  border-radius:10px;
+  padding:26px 26px 22px;
+  box-shadow:8px 8px 0 rgba(28,23,18,.12);
+  transform:rotate(1.2deg);
+}
+@media(max-width:920px){.manifest{transform:none;max-width:480px}}
+.manifest-head{
+  display:block;
+  font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);
+  border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:16px;
+}
+.manifest-head .doc-num{display:block;margin-top:3px}
+.m-row{
+  display:flex;justify-content:space-between;gap:16px;
+  padding:7px 0;border-bottom:1px dashed var(--line);
+  font-size:14.5px;
+}
+.m-row:last-of-type{border-bottom:none}
+.m-label{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);padding-top:3px;white-space:nowrap}
+.m-val{text-align:right;font-weight:500}
+.route{
+  margin:18px 0 6px;display:flex;align-items:center;gap:12px;
+  font-family:var(--font-mono);font-size:13px;font-weight:600;
+}
+.route-track{flex:1;height:2px;position:relative;
+  background:repeating-linear-gradient(90deg,var(--ink) 0 7px,transparent 7px 14px);
+}
+.route-dot{position:absolute;top:-3.5px;width:9px;height:9px;border-radius:50%;background:var(--red);border:2px solid #FBF8F0;box-shadow:0 0 0 1.5px var(--red)}
+.route-dot.start{left:0}
+.route-dot.end{right:0;background:var(--green);box-shadow:0 0 0 1.5px var(--green)}
+.barcode{
+  margin-top:16px;height:42px;
+  background:repeating-linear-gradient(90deg,
+    var(--ink) 0 2px,transparent 2px 5px,
+    var(--ink) 5px 8px,transparent 8px 10px,
+    var(--ink) 10px 11px,transparent 11px 16px,
+    var(--ink) 16px 19px,transparent 19px 21px);
+  border-radius:2px;
+}
+.barcode-num{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.35em;
+  color:var(--ink-soft);text-align:center;margin-top:6px;
+}
+.stamp{
+  position:absolute;top:-24px;right:-16px;
+  width:104px;height:104px;border-radius:50%;
+  border:2.5px solid var(--red-deep);color:var(--red-deep);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-family:var(--font-mono);font-size:11.5px;font-weight:600;line-height:1.45;
+  transform:rotate(11deg);background:rgba(245,239,227,.82);
+  box-shadow:inset 0 0 0 5px rgba(179,35,27,.14);
+}
+@media(max-width:920px){.stamp{right:6px;top:-20px;width:104px;height:104px;font-size:10.5px}}
+
+/* ---------- sections common ---------- */
+.section{padding:clamp(64px,9vw,120px) 0}
+.section-head{max-width:44em;margin-bottom:clamp(36px,5vw,60px)}
+.section-head h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin-bottom:16px}
+.section-head p{color:var(--ink-soft);font-size:1.08em}
+
+/* ---------- inside (contents) ---------- */
+.inside-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(36px,5vw,72px);align-items:start}
+@media(max-width:920px){.inside-grid{grid-template-columns:1fr}}
+.toc{border-top:1.5px solid var(--ink)}
+.toc-row{
+  display:grid;grid-template-columns:56px 1fr auto;gap:18px;align-items:baseline;
+  padding:15px 4px;border-bottom:1px solid var(--line);
+  transition:background .2s,padding-left .2s;
+}
+.toc-row:hover{background:rgba(224,46,36,.05);padding-left:12px}
+.toc-num{font-family:var(--font-mono);font-size:13px;color:var(--red-deep);font-weight:600}
+.toc-title{font-weight:500;font-size:1.05em}
+.toc-page{font-family:var(--font-mono);font-size:12.5px;color:var(--ink-soft)}
+.stats{display:grid;gap:0;border:1.5px solid var(--ink);border-radius:10px;overflow:hidden;background:#FBF8F0}
+.stat{padding:22px 24px;border-bottom:1px dashed var(--line)}
+.stat:last-child{border-bottom:none}
+.stat b{
+  display:block;font-family:var(--font-mono);font-weight:600;
+  font-size:clamp(1.6rem,2.4vw,2.1rem);color:var(--red-deep);margin-bottom:4px;
+}
+.stat span{font-size:14px;color:var(--ink-soft)}
+
+/* ---------- path ---------- */
+.path{background:var(--paper-2)}
+.steps{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:22px;
+}
+@media(max-width:920px){.steps{grid-template-columns:1fr;gap:0}}
+.step{position:relative;padding-top:30px}
+@media(max-width:920px){.step{padding:20px 0 20px 66px}}
+.step::before{
+  content:"";position:absolute;top:9px;left:0;right:0;height:2px;
+  background:repeating-linear-gradient(90deg,var(--ink) 0 6px,transparent 6px 12px);
+}
+@media(max-width:920px){
+  .step::before{top:0;bottom:0;left:23px;right:auto;width:2px;height:auto;
+    background:repeating-linear-gradient(180deg,var(--ink) 0 6px,transparent 6px 12px)}
+}
+.step-num{
+  position:absolute;top:0;left:0;width:20px;height:20px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--ink);z-index:1;
+}
+.step:nth-child(5) .step-num{background:var(--green);border-color:var(--green)}
+@media(max-width:920px){.step-num{left:14px}}
+.step h3{font-size:1rem;font-family:var(--font-body);font-weight:600;margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- case (dark) ---------- */
+.case{background:var(--ink);color:var(--paper)}
+.case .section-head p{color:rgba(245,239,227,.66)}
+.case h2 .accent{color:#7FD6A4}
+.bars{margin-top:14px;display:grid;gap:26px}
+.bar-row .bar-top{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:15px;margin-bottom:8px;
+}
+.bar-top .mono{font-weight:600}
+.bar-track{height:38px;background:rgba(245,239,227,.09);border-radius:5px;overflow:hidden}
+.bar-fill{height:100%;border-radius:5px;display:flex;align-items:center;padding:0 14px;
+  font-family:var(--font-mono);font-size:13px;font-weight:600;color:#fff;white-space:nowrap}
+.bar-fill.green{background:var(--green);width:36%}
+.bar-fill.red{background:var(--red);width:min(100%, calc(23000 / 8420 * 36%))}
+@media(max-width:640px){.bar-fill span{display:none}}
+.case-foot{
+  margin-top:30px;padding-top:22px;border-top:1px dashed rgba(245,239,227,.25);
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  font-family:var(--font-mono);font-size:13px;color:rgba(245,239,227,.6);
+}
+.case-foot b{color:#7FD6A4;font-weight:600}
+
+/* ---------- templates teaser ---------- */
+.tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center}
+@media(max-width:920px){.tpl-grid{grid-template-columns:1fr}}
+.chat{
+  background:#FBF8F0;border:1.5px solid var(--ink);border-radius:14px;
+  padding:22px;box-shadow:8px 8px 0 rgba(28,23,18,.12);
+}
+.chat-cap{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);margin-bottom:14px}
+.bubble{
+  background:var(--paper-2);border:1.5px solid var(--ink);border-radius:12px 12px 12px 3px;
+  padding:16px 18px;margin-bottom:12px;
+}
+.bubble-cn{font-family:var(--font-cn);font-size:17px;margin-bottom:8px;line-height:1.7}
+.bubble-ru{font-size:14px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:8px}
+.tpl-more{
+  font-family:var(--font-mono);font-size:13px;color:var(--red-deep);font-weight:600;
+}
+
+/* ---------- offer ---------- */
+.offer{background:var(--paper-2)}
+.offer-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,80px);align-items:start}
+@media(max-width:920px){.offer-grid{grid-template-columns:1fr}}
+.checklist{list-style:none;display:grid;gap:0}
+.checklist li{
+  display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;
+  padding:13px 0;border-bottom:1px solid var(--line);font-size:1.02em;
+}
+.checklist li:last-child{border-bottom:none}
+.check{
+  width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;margin-top:2px;
+  font-size:13px;font-weight:700;
+}
+.price-card{
+  background:#FBF8F0;border:2px solid var(--ink);border-radius:14px;
+  padding:34px 32px;box-shadow:10px 10px 0 rgba(28,23,18,.14);
+  position:relative;
+}
+.price-card .tag{
+  position:absolute;top:-15px;left:26px;background:var(--red);color:#fff;
+  font-family:var(--font-mono);font-size:12px;font-weight:600;
+  padding:5px 14px;border-radius:3px;transform:rotate(-2deg);
+}
+.price-card h3{font-size:1.15rem;font-family:var(--font-body);font-weight:600;margin-bottom:6px}
+.price-card .sub{font-size:14px;color:var(--ink-soft);margin-bottom:22px}
+.price-line{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.price{font-family:var(--font-display);font-weight:900;font-size:clamp(2.4rem,4vw,3.2rem);color:var(--red-deep)}
+.price-note{font-family:var(--font-mono);font-size:12.5px;color:var(--ink-soft)}
+.price-card .btn{width:100%;justify-content:center;margin-top:18px}
+.guarantee{
+  margin-top:18px;font-size:14px;color:var(--ink-soft);
+  border-top:1px dashed var(--line);padding-top:16px;
+}
+
+/* ---------- faq ---------- */
+.faq-list{border-top:1.5px solid var(--ink)}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{
+  list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;
+  align-items:center;padding:20px 4px;font-weight:600;font-size:1.05em;
+  transition:color .2s;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:hover{color:var(--red-deep)}
+.faq-icon{
+  flex:none;width:26px;height:26px;border:1.5px solid var(--ink);border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);font-size:15px;transition:transform .25s,background .25s,color .25s;
+}
+.faq-list details[open] .faq-icon{transform:rotate(45deg);background:var(--red);border-color:var(--red);color:#fff}
+.faq-a{padding:0 44px 22px 4px;color:var(--ink-soft);max-width:56em}
+
+/* ---------- footer ---------- */
+.ftr{background:var(--ink);color:rgba(245,239,227,.72);padding:44px 0;font-size:14.5px}
+.ftr-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.ftr a{color:var(--paper);text-decoration:none;border-bottom:1px dashed rgba(245,239,227,.4)}
+.ftr a:hover{border-bottom-style:solid}
+.ftr .mono{font-size:12px;color:rgba(245,239,227,.45)}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top"><span class="brand-mark">拼</span>Pinduoduo без байера</a>
+    <nav class="nav">
+      <a href="#inside">Что внутри</a>
+      <a href="#path">Как это устроено</a>
+      <a href="#case">Цифры</a>
+      <a href="#price">Купить</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn-red" href="#price">Купить</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag rise">PDF-памятка · 28 страниц · актуально на октябрь 2026</span>
+        <h1 class="rise rise-1">Первый заказ на <span class="accent">Pinduoduo</span> – сам, без байера и наценки</h1>
+        <p class="hero-sub rise rise-2">Пошаговая инструкция с реальными скриншотами: от регистрации до посылки на складе в Москве. Китайский язык не нужен – есть мини-словарь кнопок и готовые шаблоны сообщений продавцу.</p>
+        <div class="hero-cta rise rise-3">
+          <a class="btn btn-red" href="#price">Купить памятку – 990 ₽</a>
+          <a class="btn btn-ghost" href="#inside">Смотреть содержание</a>
+        </div>
+        <p class="hero-note rise rise-4">Внутри: 9 разделов, чек-лист «надёжный продавец», 7 шаблонов на китайском, таблица расчёта итоговой цены.</p>
+      </div>
+
+      <div class="manifest rise rise-2">
+        <div class="stamp">Проверено<br>на 6 посылках</div>
+        <div class="manifest-head">
+          <span>КАРГО-НАКЛАДНАЯ</span>
+          <span class="doc-num">№ PDD-RU-2026</span>
+        </div>
+        <div class="m-row"><span class="m-label">Отправитель</span><span class="m-val">продавец Pinduoduo</span></div>
+        <div class="m-row"><span class="m-label">Получатель</span><span class="m-val">склад карго → Москва</span></div>
+        <div class="m-row"><span class="m-label">Срок в пути</span><span class="m-val">3 недели – 2 месяца</span></div>
+        <div class="route">
+          <span>Китай</span>
+          <span class="route-track"><i class="route-dot start"></i><i class="route-dot end"></i></span>
+          <span>Москва</span>
+        </div>
+        <div class="barcode"></div>
+        <div class="barcode-num">220 ¥ · 11 ₽/¥ · 8 420 ₽</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIDE -->
+  <section class="section" id="inside">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Что внутри памятки</h2>
+        <p>28 страниц в том порядке, в каком ты будешь действовать. В конце каждого раздела – блок «Готово, если»: пока не выполнила его, дальше не идёшь.</p>
+      </div>
+      <div class="inside-grid">
+        <div class="toc">
+          <div class="toc-row"><span class="toc-num">01</span><span class="toc-title">Как это устроено и где риски</span><span class="toc-page">с. 4</span></div>
+          <div class="toc-row"><span class="toc-num">02</span><span class="toc-title">Аккаунт, перевод экрана и адрес карго</span><span class="toc-page">с. 6</span></div>
+          <div class="toc-row"><span class="toc-num">03</span><span class="toc-title">Выбор товара и продавца</span><span class="toc-page">с. 10</span></div>
+          <div class="toc-row"><span class="toc-num">04</span><span class="toc-title">Оплата картой</span><span class="toc-page">с. 14</span></div>
+          <div class="toc-row"><span class="toc-num">05</span><span class="toc-title">После оплаты: склад, посылка, отслеживание</span><span class="toc-page">с. 17</span></div>
+          <div class="toc-row"><span class="toc-num">06</span><span class="toc-title">Итоговая цена: таблица расчёта</span><span class="toc-page">с. 21</span></div>
+          <div class="toc-row"><span class="toc-num">07</span><span class="toc-title">Если пришло не то</span><span class="toc-page">с. 24</span></div>
+          <div class="toc-row"><span class="toc-num">08</span><span class="toc-title">Шаблоны сообщений продавцу</span><span class="toc-page">с. 25</span></div>
+          <div class="toc-row"><span class="toc-num">09</span><span class="toc-title">Мой опыт: 6 посылок, две истории с цифрами</span><span class="toc-page">с. 28</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>6</b><span>посылок за год: одежда, обувь, товары для животных, посуда</span></div>
+          <div class="stat"><b>3–30</b><span>заказов от разных продавцов собирается в одну посылку</span></div>
+          <div class="stat"><b>7</b><span>готовых шаблонов сообщений на китайском – копируй и вставляй</span></div>
+          <div class="stat"><b>24</b><span>скриншота реальных заказов: каждый экран до и после перевода</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATH -->
+  <section class="section path" id="path">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Как едет твой товар</h2>
+        <p>Байера в этой схеме нет. Ты платишь продавцу за товар и карго за доставку по весу – всё. Памятка ведёт по каждому шагу.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><i class="step-num"></i><h3>Заказ у продавца</h3><p>Оплачиваешь на Pinduoduo, у каждого продавца отдельно, в юанях.</p></div>
+        <div class="step"><i class="step-num"></i><h3>Склад карго в Китае</h3><p>Продавец отправляет товар на твой персональный адрес склада.</p></div>
+        <div class="step"><i class="step-num"></i><h3>Взвешивание и фото</h3><p>Склад отмечает прибытие в кабинете, взвешивает и фотографирует упаковку.</p></div>
+        <div class="step"><i class="step-num"></i><h3>Сборка посылки</h3><p>Сама выбираешь, что едет в Россию, а что подождёт на складе.</p></div>
+        <div class="step"><i class="step-num"></i><h3>Москва, «Южные ворота»</h3><p>Забираешь сама, вызываешь водителя или отправляешь ТК в регион.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE -->
+  <section class="section case" id="case">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Цифры из реального заказа: <span class="accent">когтеточка</span></h2>
+        <p>Так выглядит расчёт из раздела 6 памятки. Одна вещь, полная таблица, честные суммы. Октябрь 2026.</p>
+      </div>
+      <div class="bars">
+        <div class="bar-row">
+          <div class="bar-top"><span>Через Pinduoduo + карго, до склада в Москве</span><span class="mono">8 420 ₽</span></div>
+          <div class="bar-track"><div class="bar-fill green"><span>2 420 ₽ товар + 6 000 ₽ доставка</span></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-top"><span>Та же когтеточка на Яндекс Маркете</span><span class="mono">19 000 – 23 000 ₽</span></div>
+          <div class="bar-track"><div class="bar-fill red"><span>в 2,3–2,7 раза дороже</span></div></div>
+        </div>
+      </div>
+      <div class="case-foot">
+        <span>220 ¥ по курсу 11 ₽/¥ · вес упаковки 12,68 кг · тариф $3,5/кг</span>
+        <span>Экономия: <b>10 580 – 14 580 ₽</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPLATES -->
+  <section class="section">
+    <div class="wrap tpl-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:24px">
+          <h2>Пишешь продавцу по-китайски. Уже готово</h2>
+          <p>Копируешь текст шаблона, подставляешь свои данные вместо скобок – и отправляешь. Ответ читаешь через переводчик. Шаблоны закрывают главное: наличие, размер, вес упаковки, фото товара, возврат денег.</p>
+        </div>
+        <p class="tpl-more">+ ещё 6 шаблонов внутри памятки</p>
+      </div>
+      <div class="chat">
+        <div class="chat-cap">Шаблон 1 из 7 · до оплаты</div>
+        <div class="bubble">
+          <div class="bubble-cn">您好，请问这款[颜色][尺码]有现货吗？谢谢！</div>
+          <div class="bubble-ru">Здравствуйте, есть ли в наличии этот товар в цвете [цвет] и размере [размер]? Спасибо!</div>
+        </div>
+        <div class="chat-cap">Зачем: проверяет, что продавец живой, и что нужный вариант есть в наличии.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="section offer" id="price">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Забери памятку</h2>
+        <p>Один спокойный вечер – и ты знаешь больше о покупках из Китая, чем человек, который два года переплачивает байеру.</p>
+      </div>
+      <div class="offer-grid">
+        <ul class="checklist">
+          <li><span class="check">✓</span><span><strong>PDF на 28 страниц</strong> – читается с телефона, ссылки между разделами работают</span></li>
+          <li><span class="check">✓</span><span><strong>Чек-лист «надёжный продавец»</strong> – 10 пунктов и красный флаг: когда искать другого</span></li>
+          <li><span class="check">✓</span><span><strong>7 шаблонов сообщений</strong> на китайском с русским переводом и примерами</span></li>
+          <li><span class="check">✓</span><span><strong>Таблица расчёта итоговой цены</strong> – считаешь до оплаты, а не после</span></li>
+          <li><span class="check">✓</span><span><strong>Мини-словарь кнопок</strong> приложения: корзина, размер, возврат денег</span></li>
+          <li><span class="check">✓</span><span><strong>План действий, если пришло не то</strong> – пошагово, с примерами из реальных посылок</span></li>
+        </ul>
+        <div class="price-card">
+          <span class="tag">PDF · мгновенная доставка</span>
+          <h3>Памятка «Первый заказ на Pinduoduo»</h3>
+          <p class="sub">Актуально на октябрь 2026. Файл приходит на почту сразу после оплаты.</p>
+          <div class="price-line">
+            <span class="price">990 ₽</span>
+            <span class="price-note">разовая оплата,<br>обновления включены</span>
+          </div>
+          <!-- вставь ссылку на оплату в href ниже -->
+          <a class="btn btn-red" href="#">Купить и скачать</a>
+          <p class="guarantee">Не получилось сделать первый заказ по памятке? Напиши в течение 14 дней – верну деньги без вопросов.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Вопросы перед покупкой</h2>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>Нужно ли знать китайский?<span class="faq-icon">+</span></summary>
+          <p class="faq-a">Нет. В памятке разобран рабочий приём «скриншот + переводчик»: как переводить любой экран приложения и что обязательно прочитать перед оплатой. Плюс мини-словарь кнопок и готовые сообщения продавцу – китайский ты только копируешь.</p>
+        </details>
+        <details>
+          <summary>Подойдёт ли российская карта?<span class="faq-icon">+</span></summary>
+          <p class="faq-a">В разделе 4 – весь процесс: карта привязывается прямо в приложении, цены в юанях, как обменять рубли заранее и что уточнить в своём банке до первого заказа. За шесть посылок отказов по оплате не было.</p>
+        </details>
+        <details>
+          <summary>Сколько ждать посылку?<span class="faq-icon">+</span></summary>
+          <p class="faq-a">От 3 недель до 2 месяцев. Памятка честно говорит: для подарка «на послезавтра» этот способ не подходит. Зато ты видишь трек, фото упаковки на весах и статус каждого заказа.</p>
+        </details>
+        <details>
+          <summary>Это гарантия, что заказ пройдёт без проблем?<span class="faq-icon">+</span></summary>
+          <p class="faq-a">Нет, и памятка это прямо оговаривает. Она учит делать заказ осознанно: проверить продавца и размер до оплаты, посчитать итоговую цену до списания денег и знать, что делать, если пришло не то. Главное правило всей памятки: проверять до оплаты, а не после.</p>
+        </details>
+        <details>
+          <summary>А если памятка мне не подойдёт?<span class="faq-icon">+</span></summary>
+          <p class="faq-a">Напиши в течение 14 дней после покупки – верну деньги. Один вопрос в мессенджер, без анкет и объяснений.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <div>
+      <div class="brand" style="color:var(--paper);margin-bottom:8px"><span class="brand-mark">拼</span>Pinduoduo без байера</div>
+      <div>Вопросы о памятке – в Telegram:</div>
+      <!-- вставь свой ник или ссылку на Telegram -->
+      <a href="#">@твой_ник</a>
+    </div>
+    <div class="mono">© 2026 · PDD-RU-2026 · сделано на основе 6 реальных посылок</div>
+  </div>
+</footer>
+
+</body>
+</html>
