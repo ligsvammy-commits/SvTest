@@ -75,14 +75,50 @@ a{color:inherit}
   display:inline-flex;align-items:center;gap:10px;
   font-family:var(--font-body);font-weight:600;font-size:16px;
   padding:15px 28px;border-radius:6px;text-decoration:none;cursor:pointer;
-  border:2px solid var(--ink);
-  transition:transform .15s ease,box-shadow .15s ease,background .15s ease,color .15s ease;
+  border:2px solid var(--ink);position:relative;overflow:hidden;
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease,color .15s ease,filter .2s ease;
 }
-.btn-red{background:var(--red);border-color:var(--red);color:#fff;box-shadow:4px 4px 0 var(--ink)}
-.btn-red:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn-red{background:var(--red);border-color:var(--red);color:#fff;box-shadow:4px 4px 0 var(--ink);
+  filter:drop-shadow(0 0 8px rgba(224,46,36,.35));
+  animation:btnGlow 3.2s ease-in-out infinite;
+}
+.btn-red:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);
+  animation-play-state:paused;
+  filter:drop-shadow(0 0 22px rgba(224,46,36,.6));
+}
 .btn-red:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}
-.btn-ghost{background:transparent;color:var(--ink)}
-.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-grad{background:linear-gradient(120deg,#FF7A45,#E02E24 65%);border-color:transparent}
+.btn-grad:hover{background:linear-gradient(120deg,#FF8F5E,#F03528 65%)}
+.btn-ghost{background:transparent;color:var(--ink);
+  filter:drop-shadow(0 0 6px rgba(28,23,18,.14));
+  animation:btnGlowGhost 3.2s ease-in-out infinite;
+}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);
+  animation-play-state:paused;
+  filter:drop-shadow(0 0 12px rgba(28,23,18,.35));
+}
+.btn::after{
+  content:"";position:absolute;top:-60%;bottom:-60%;left:-70%;width:45%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.4),transparent);
+  transform:skewX(-20deg);pointer-events:none;
+  animation:btnWave 3.4s ease-in-out infinite;
+}
+.btn-ghost::after{
+  background:linear-gradient(105deg,transparent,rgba(245,239,227,.28),transparent);
+}
+@keyframes btnWave{0%{left:-70%}55%,100%{left:145%}}
+@keyframes btnGlow{
+  0%,100%{filter:drop-shadow(0 0 7px rgba(224,46,36,.3))}
+  50%{filter:drop-shadow(0 0 20px rgba(224,46,36,.55))}
+}
+@keyframes btnGlowGhost{
+  0%,100%{filter:drop-shadow(0 0 5px rgba(28,23,18,.12))}
+  50%{filter:drop-shadow(0 0 12px rgba(28,23,18,.28))}
+}
+@media(prefers-reduced-motion:reduce){
+  .btn::after{display:none}
+  .btn-red,.btn-ghost{animation:none}
+}
 
 /* ---------- hero ---------- */
 .hero{padding:clamp(56px,8vw,110px) 0 clamp(48px,7vw,90px)}
@@ -503,8 +539,7 @@ a{color:inherit}
             <span class="price-note">разовая оплата,<br>обновления включены</span>
           </div>
           <!-- вставь ссылку на оплату в href ниже -->
-          <a class="btn btn-red" href="#">Купить и скачать</a>
-          <p class="guarantee">Не получилось сделать первый заказ по памятке? Напиши в течение 14 дней – верну деньги без вопросов.</p>
+          <a class="btn btn-red btn-grad" href="#">Купить и скачать</a>
         </div>
       </div>
     </div>
